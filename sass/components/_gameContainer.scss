@@ -1,0 +1,194 @@
+@mixin player {
+  position: relative;
+  width: 14rem;
+  height: 18rem;
+  background-color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 3rem;
+  border: 0.3rem solid #333;
+  border-bottom: 1.6rem solid #333;
+}
+@mixin icon {
+  position: absolute;
+  top: -16%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@mixin title {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: 10rem;
+}
+@mixin score {
+  font-size: 6.4rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.game-container {
+  position: relative;
+  background: #7945ff;
+  width: 100vw;
+  height: 100vh;
+
+  .game-container-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    .game-container-box-top {
+      display: flex;
+      align-items: center;
+      gap: 20rem;
+      .game-container-box-top-btn {
+        background-color: #5c2dd5;
+        color: #fff;
+        padding: 1.4rem 2.2rem;
+        font-size: 1.6rem;
+        border: none;
+        border-radius: 10rem;
+        cursor: pointer;
+        &:hover {
+          background-color: #f36687;
+        }
+      }
+    }
+    .game-container-box-middle {
+      margin-top: 4rem;
+
+      .game-container-box-middle-board {
+        display: flex;
+        align-items: center;
+        gap: 6rem;
+
+        .game-container-box-middle-board-player-1 {
+          @include player;
+          .game-container-box-middle-board-player-1-icon {
+            @include icon;
+          }
+          .game-container-box-middle-board-player-1-title {
+            @include title;
+          }
+          .game-container-box-middle-board-player-1-score {
+            @include score;
+          }
+        }
+        .game-container-box-middle-board-game {
+          position: relative;
+          width: 63rem;
+          height: 61rem;
+          background-color: #fff;
+          padding: 1.6rem;
+          padding-bottom: 4rem;
+          border: 0.3rem solid #333;
+          border-bottom: 1.6rem solid #333;
+          border-radius: 4rem;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          .game-container-box-middle-board-game-column {
+            position: relative;
+            .game-container-box-middle-cursor {
+              width: 3.8rem;
+              height: 3.8rem;
+              position: absolute;
+              top: -11%;
+              left: 20%;
+              display: none;
+            }
+            height: 98%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .game-container-box-middle-board-game-column-circle {
+              width: 6.8rem;
+              height: 6.8rem;
+              border-radius: 50%;
+              background-color: #7945ff;
+              border: 0.3rem solid #333;
+              border-top: 1.4rem solid #333;
+            }
+            .game-container-box-middle-board-game-column-circle-player-1 {
+              background-color: #fd6687;
+              border-top: 0.6rem solid #333;
+            }
+            .game-container-box-middle-board-game-column-circle-player-2 {
+              background-color: #face67;
+              border-top: 0.6rem solid #333;
+            }
+          }
+        }
+        .game-container-box-middle-board-player-2 {
+          @include player;
+          .game-container-box-middle-board-player-2-icon {
+            @include icon;
+          }
+          .game-container-box-middle-board-player-2-title {
+            @include title;
+          }
+          .game-container-box-middle-board-player-2-score {
+            @include score;
+          }
+        }
+      }
+    }
+    .game-container-box-bottom {
+      position: absolute;
+      bottom: -14%;
+      width: 19rem;
+      height: 14.5rem;
+      border: 0.3rem solid #333;
+      border-bottom: 1.4rem solid #333;
+      border-radius: 3rem;
+      border-top-right-radius: 6rem;
+      border-top-left-radius: 6rem;
+      background-color: #f36687;
+      .game-container-box-bottom-player-turn {
+        margin-top: 2.4rem;
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      .game-container-box-bottom-countdown {
+        margin-top: 1rem;
+        color: #fff;
+        font-size: 5rem;
+        text-align: center;
+        font-weight: 600;
+      }
+      .game-container-box-bottom-play-again {
+        margin-left: 2.8rem;
+        background-color: #7945ff;
+        color: #fff;
+        padding: 1.4rem 2.2rem;
+        font-size: 1.4rem;
+        border: none;
+        border-radius: 10rem;
+        cursor: pointer;
+        display: none;
+        &:hover {
+          background-color: #f36687;
+        }
+      }
+    }
+  }
+
+  .game-container-bottom-color {
+    background: #5c2dd5;
+    position: absolute;
+    width: 100vw;
+    height: 20.8vh;
+    bottom: 0;
+    border-top-right-radius: 4rem;
+    border-top-left-radius: 4rem;
+  }
+}

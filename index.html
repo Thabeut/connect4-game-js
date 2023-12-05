@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="build/css/index.css" />
+    <script defer src="js/script.js" type="module"></script>
+    <title>Game</title>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-container-box">
+        <div class="game-container-box-top">
+          <button class="game-container-box-top-btn menu-btn">MENU</button>
+          <svg
+            width="58px"
+            height="61px"
+            viewBox="0 0 58 61"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <title>logo</title>
+            <g
+              id="Designs"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g id="assets" transform="translate(-432.000000, -742.000000)">
+                <g id="Group-24" transform="translate(211.000000, 160.000000)">
+                  <g id="logo" transform="translate(221.000000, 582.000000)">
+                    <g id="Group-23" fill="#000000">
+                      <circle id="Oval-Copy-47" cx="13" cy="13" r="13"></circle>
+                      <circle id="Oval-Copy-51" cx="45" cy="13" r="13"></circle>
+                      <circle id="Oval-Copy-53" cx="13" cy="45" r="13"></circle>
+                      <circle id="Oval-Copy-52" cx="45" cy="45" r="13"></circle>
+                    </g>
+                    <g
+                      id="Group-23-Copy"
+                      transform="translate(0.000000, 3.000000)"
+                      fill="#000000"
+                    >
+                      <circle id="Oval-Copy-47" cx="13" cy="13" r="13"></circle>
+                      <circle id="Oval-Copy-51" cx="45" cy="13" r="13"></circle>
+                      <circle id="Oval-Copy-53" cx="13" cy="45" r="13"></circle>
+                      <circle id="Oval-Copy-52" cx="45" cy="45" r="13"></circle>
+                    </g>
+                    <circle
+                      id="Oval-Copy-11"
+                      fill="#FD6687"
+                      cx="13"
+                      cy="13"
+                      r="10"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-25"
+                      fill="#FD6687"
+                      cx="45"
+                      cy="45"
+                      r="10"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-23"
+                      fill="#FFCE67"
+                      cx="45"
+                      cy="13"
+                      r="10"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-24"
+                      fill="#FFCE67"
+                      cx="13"
+                      cy="45"
+                      r="10"
+                    ></circle>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <button class="game-container-box-top-btn restart-btn">
+            RESTART
+          </button>
+        </div>
+        <div class="game-container-box-middle">
+          <div class="game-container-box-middle-board">
+            <div class="game-container-box-middle-board-player-1">
+              <svg
+                width="54px"
+                height="59px"
+                viewBox="0 0 54 59"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                class="game-container-box-middle-board-player-1-icon"
+              >
+                <title>player-one</title>
+                <g
+                  id="Designs"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="player-one">
+                    <circle
+                      id="Oval-Copy-21"
+                      fill="#000000"
+                      cx="27"
+                      cy="27"
+                      r="27"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-40"
+                      fill="#000000"
+                      cx="27"
+                      cy="32"
+                      r="27"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-11"
+                      fill="#FD6687"
+                      cx="27"
+                      cy="27"
+                      r="24"
+                    ></circle>
+                    <g
+                      id="Group-8"
+                      transform="translate(19.000000, 17.000000)"
+                      stroke="#000000"
+                      stroke-width="3"
+                    >
+                      <path
+                        d="M6,26.75 C12.627417,26.75 18,21.377417 18,14.75 C18,8.122583 12.627417,2.75 6,2.75"
+                        id="Oval-Copy-11"
+                        transform="translate(12.000000, 14.750000) rotate(90.000000) translate(-12.000000, -14.750000) "
+                      ></path>
+                      <g id="Group-7" transform="translate(9.750000, 0.000000)">
+                        <line
+                          x1="0.5"
+                          y1="0"
+                          x2="0.5"
+                          y2="5.9844035"
+                          id="Path"
+                        ></line>
+                        <line
+                          x1="10.5"
+                          y1="0"
+                          x2="10.5"
+                          y2="5.9844035"
+                          id="Path-Copy"
+                        ></line>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+
+              <p class="game-container-box-middle-board-player-1-title">
+                Player 1
+              </p>
+              <p class="game-container-box-middle-board-player-1-score">0</p>
+            </div>
+            <div class="game-container-box-middle-board-game">
+              <div
+                class="game-container-box-middle-board-game-column-1 game-container-box-middle-board-game-column"
+                id="column-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-1"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-1-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-1-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-1-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-1-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-1-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-1-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-1-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-1-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-1-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-1-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-1-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-1-6"
+                ></div>
+              </div>
+              <div
+                class="game-container-box-middle-board-game-column-2 game-container-box-middle-board-game-column"
+                id="column-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-2"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-2-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-2-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-2-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-2-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-2-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-2-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-2-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-2-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-2-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-2-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-2-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-2-6"
+                ></div>
+              </div>
+              <div
+                class="game-container-box-middle-board-game-column-3 game-container-box-middle-board-game-column"
+                id="column-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-3"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-3-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-3-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-3-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-3-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-3-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-3-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-3-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-3-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-3-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-3-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-3-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-3-6"
+                ></div>
+              </div>
+              <div
+                class="game-container-box-middle-board-game-column-4 game-container-box-middle-board-game-column"
+                id="column-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-4"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-4-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-4-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-4-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-4-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-4-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-4-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-4-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-4-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-4-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-4-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-4-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-4-6"
+                ></div>
+              </div>
+              <div
+                class="game-container-box-middle-board-game-column-5 game-container-box-middle-board-game-column"
+                id="column-5"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-5"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-5-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-5-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-5-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-5-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-5-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-5-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-5-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-5-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-5-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-5-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-5-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-5-6"
+                ></div>
+              </div>
+              <div
+                class="game-container-box-middle-board-game-column-6 game-container-box-middle-board-game-column"
+                id="column-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-6"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-6-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-6-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-6-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-6-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-6-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-6-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-6-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-6-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-6-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-6-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-6-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-6-6"
+                ></div>
+              </div>
+              <div
+                class="game-container-box-middle-board-game-column-7 game-container-box-middle-board-game-column"
+                id="column-7"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  class="game-container-box-middle-cursor cursor-column-7"
+                >
+                  <g transform="matrix(1 0 0 -1 -877 156)" fill-rule="evenodd">
+                    <use filter="url(#a)" xlink:href="#b"></use>
+                    <path
+                      stroke="#000"
+                      stroke-width="3"
+                      d="M895.916 121.727a6.49 6.49 0 0 1 3.877 1.271l11.068 8.173a6.5 6.5 0 0 1 2.639 5.229v6.6a6.48 6.48 0 0 1-1.904 4.596A6.48 6.48 0 0 1 907 149.5h-22a6.48 6.48 0 0 1-4.596-1.904A6.48 6.48 0 0 1 878.5 143v-6.616a6.5 6.5 0 0 1 2.613-5.21l10.932-8.157a6.49 6.49 0 0 1 3.87-1.29Z"
+                    ></path>
+                  </g>
+                </svg>
+                <div
+                  class="game-container-box-middle-board-game-column-7-1 game-container-box-middle-board-game-column-circle"
+                  id="circle-7-1"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-7-2 game-container-box-middle-board-game-column-circle"
+                  id="circle-7-2"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-7-3 game-container-box-middle-board-game-column-circle"
+                  id="circle-7-3"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-7-4 game-container-box-middle-board-game-column-circle"
+                  id="circle-7-4"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-7-5 game-container-box-middle-board-game-column-circle"
+                  id="circle-7-5"
+                ></div>
+                <div
+                  class="game-container-box-middle-board-game-column-7-6 game-container-box-middle-board-game-column-circle"
+                  id="circle-7-6"
+                ></div>
+              </div>
+            </div>
+            <div class="game-container-box-middle-board-player-2">
+              <svg
+                width="54px"
+                height="59px"
+                viewBox="0 0 54 59"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                class="game-container-box-middle-board-player-2-icon"
+              >
+                <title>player-two</title>
+                <g
+                  id="Designs"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g
+                    id="player-two"
+                    transform="translate(27.000000, 29.500000) scale(-1, 1) translate(-27.000000, -29.500000) "
+                  >
+                    <circle
+                      id="Oval-Copy-21"
+                      fill="#000000"
+                      cx="27"
+                      cy="27"
+                      r="27"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-40"
+                      fill="#000000"
+                      cx="27"
+                      cy="32"
+                      r="27"
+                    ></circle>
+                    <circle
+                      id="Oval-Copy-11"
+                      fill="#FFCE67"
+                      cx="27"
+                      cy="27"
+                      r="24"
+                    ></circle>
+                    <g
+                      id="Group-8"
+                      transform="translate(19.000000, 17.000000)"
+                      stroke="#000000"
+                      stroke-width="3"
+                    >
+                      <path
+                        d="M6,26.75 C12.627417,26.75 18,21.377417 18,14.75 C18,8.122583 12.627417,2.75 6,2.75"
+                        id="Oval-Copy-11"
+                        transform="translate(12.000000, 14.750000) rotate(90.000000) translate(-12.000000, -14.750000) "
+                      ></path>
+                      <g id="Group-7" transform="translate(9.750000, 0.000000)">
+                        <line
+                          x1="0.5"
+                          y1="0"
+                          x2="0.5"
+                          y2="5.9844035"
+                          id="Path"
+                        ></line>
+                        <line
+                          x1="10.5"
+                          y1="0"
+                          x2="10.5"
+                          y2="5.9844035"
+                          id="Path-Copy"
+                        ></line>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+
+              <p class="game-container-box-middle-board-player-2-title">
+                Player 2
+              </p>
+              <p class="game-container-box-middle-board-player-2-score">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="game-container-box-bottom">
+          <p class="game-container-box-bottom-player-turn">PLAYER 1'S TURN</p>
+          <p class="game-container-box-bottom-countdown">30s</p>
+          <button class="game-container-box-bottom-play-again">
+            PLAY AGAIN
+          </button>
+        </div>
+      </div>
+      <div class="game-container-bottom-color"></div>
+    </div>
+  </body>
+</html>
