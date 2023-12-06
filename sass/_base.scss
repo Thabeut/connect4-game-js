@@ -13,7 +13,7 @@ html {
 }
 body {
   font-family: "Inter", sans-serif;
-  color: $black;
+  color: #333;
   background: linear-gradient(108deg, #fff 41.67%, #f5f3eb 100%);
 }
 .container {
@@ -39,6 +39,6 @@ hr {
 img {
   max-width: 100%;
 }
-.hidden{
+.hidden {
   display: none;
 }

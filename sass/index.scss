@@ -1,12 +1,6 @@
-// variables & functions
-@import "variables";
-
 // base & layout
 @import "base";
 @import "breakpoints";
 
 // components (button, card, navbar etc)
 @import "components/gameContainer";
-
-// utilities (margin, padding, opacity, etc)
-@import "utilities";
