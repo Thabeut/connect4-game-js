@@ -221,6 +221,8 @@ boardGame.addEventListener("click", function (e) {
     //
     let wantedCircle = document.getElementById(`circle-${columnNum}-${i}`);
     wantedCircle.style.borderTop = "0.6rem solid #333";
+    wantedCircle.style.animation = "MoveUpDown 0.1s linear";
+
     if (state.player === "1") {
       wantedCircle.style.backgroundColor = "#fd6687";
       wantedCircle.id = `circle-${columnNum}-${i}-player-1`;

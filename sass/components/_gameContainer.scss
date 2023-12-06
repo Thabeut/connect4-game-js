@@ -186,6 +186,15 @@
               background-color: #7945ff;
               border: 0.3rem solid #333;
               border-top: 1.4rem solid #333;
+              // animation: MoveUpDown 2s linear;
+
+              @keyframes MoveUpDown {
+                0%,
+                50% {
+                  transform: translateY(-100rem);
+                }
+              }
+
               @include xs {
                 width: 9rem;
                 height: 9rem;
