@@ -308,4 +308,62 @@
     border-top-right-radius: 4rem;
     border-top-left-radius: 4rem;
   }
+  .game-container-menu-window-box {
+    .game-container-menu-window {
+      position: fixed;
+      top: 24%;
+      left: 36%;
+      width: 50rem;
+      height: 50rem;
+      background-color: #7945ff;
+      padding: 8rem;
+      box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+      border: 0.3rem solid #333;
+      z-index: 100000;
+      transition: all 0.5s;
+      border-radius: 4rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .game-container-menu-window-title {
+        margin-top: -4rem;
+        font-size: 5.6rem;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+      }
+      .game-container-menu-window-btn {
+        margin-left: -2.8rem;
+        width: 120%;
+        padding: 2rem 4rem;
+        border-radius: 2rem;
+        border-bottom: 1rem solid #333;
+        font-size: 2.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          border-bottom: 1rem solid #5c2dd5;
+        }
+      }
+      .continue-game {
+        margin-top: 2rem;
+      }
+      .quit-game {
+        background-color: #f36687;
+        color: #fff;
+      }
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(1px);
+      z-index: 10000;
+      transition: all 0.5s;
+    }
+  }
 }

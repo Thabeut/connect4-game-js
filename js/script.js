@@ -25,6 +25,14 @@ const playAgainBtn = document.querySelector(
 );
 const restartBtn = document.querySelector(".restart-btn");
 
+const menuBtn = document.querySelector(".menu-btn");
+const overlay = document.querySelector(".overlay");
+const continueGame = document.querySelector(".continue-game");
+const quitGameBtn = document.querySelector(".quit-game");
+
+const restartGameMenuBtn = document.querySelector(".restart-game");
+
+const menuWindow = document.querySelector(".game-container-menu-window-box");
 /////////////////////////////
 
 const state = {
@@ -43,7 +51,11 @@ if (localStorage.getItem("Player2Score")) {
 /////////////////////////////////////////////////
 //               Functions
 /////////////////////////////////////////////////
-
+const quitGame = function () {
+  localStorage.removeItem("Player1Score");
+  localStorage.removeItem("Player2Score");
+  window.location.href = "https://www.google.com/";
+};
 const playAgain = function () {
   location.reload();
 };
@@ -152,11 +164,11 @@ const winnerPlayer2 = function (turnTitle, countdown) {
 const stopGame = function () {
   state.newGame = false;
 };
-const getCountdown = function () {
+const getCountdown = function (seconds = 31) {
   if (x) {
     clearInterval(x);
   }
-  let seconds = 31;
+
   x = setInterval(function () {
     seconds = seconds - 1;
     countdownBox.textContent = seconds + "s ";
@@ -470,6 +482,24 @@ boardGame.addEventListener("click", function (e) {
       winnerPlayer2(turnTitle, countdown);
       stopGame();
     }
+
+    // DRAW
+
+    let drawCheck = [];
+    columns.forEach((col) => {
+      for (let i = 1; i < 7; i++) {
+        drawCheck.push(col.children[i].id);
+      }
+    });
+    let checkD = false;
+    drawCheck.forEach((ele) => {
+      if (ele.includes("player")) {
+        checkD += ele.includes("player");
+      }
+    });
+    if (checkD === 42) {
+      clearInterval(x);
+    }
   }
 });
 playAgainBtn.addEventListener("click", function (e) {
@@ -479,4 +509,29 @@ playAgainBtn.addEventListener("click", function (e) {
 restartBtn.addEventListener("click", function (e) {
   e.preventDefault();
   restartGame();
+});
+restartGameMenuBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  restartGame();
+});
+menuBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  menuWindow.classList.remove("hidden");
+  clearInterval(x);
+});
+overlay.addEventListener("click", function (e) {
+  e.preventDefault();
+  menuWindow.classList.add("hidden");
+  let seconds = countdownBox.textContent;
+  getCountdown(parseInt(seconds));
+});
+continueGame.addEventListener("click", function (e) {
+  e.preventDefault();
+  menuWindow.classList.add("hidden");
+  let seconds = countdownBox.textContent;
+  getCountdown(parseInt(seconds));
+});
+quitGameBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  quitGame();
 });
