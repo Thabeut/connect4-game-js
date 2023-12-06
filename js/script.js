@@ -203,6 +203,33 @@ boardGame.addEventListener("click", function (e) {
 
     playerChange(state);
 
+    ////////////////////////
+    //   Horizontal Win
+    ////////////////////////
+    let finalArrowArr = [];
+
+    columns.forEach((col) => {
+      finalArrowArr.push(col.children[state.index].id);
+    });
+
+    const winArrPlayer1H = [];
+    finalArrowArr.forEach((ele) => {
+      if (ele.includes("player-1")) {
+        winArrPlayer1H.push(true);
+      } else winArrPlayer1H.push(false);
+    });
+    const winPlayer1H = verifyTrue(winArrPlayer1H);
+    const winArrPlayer2H = [];
+    finalArrowArr.forEach((ele) => {
+      if (ele.includes("player-2")) {
+        winArrPlayer2H.push(true);
+      } else winArrPlayer2H.push(false);
+    });
+    const winPlayer2H = verifyTrue(winArrPlayer2H);
+
+    ////////////////////////
+    //   Vertical Win
+    ////////////////////////
     const finalColumnArr = [];
     for (let i = 1; i <= 6; i++) {
       finalColumnArr.push(column.children[i].id);
@@ -223,11 +250,24 @@ boardGame.addEventListener("click", function (e) {
     const winPlayer2 = verifyTrue(winArrPlayer2);
     const turnTitle = gameTurnBox.children[0];
     const countdown = gameTurnBox.children[1];
+
+    ////////////////////////
+    //   WIN
+    ////////////////////////
+
     if (winPlayer1 === 1) {
       winnerPlayer1(turnTitle, countdown);
       stopGame();
     }
     if (winPlayer2 === 1) {
+      winnerPlayer2(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer1H === 1) {
+      winnerPlayer1(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer2H === 1) {
       winnerPlayer2(turnTitle, countdown);
       stopGame();
     }
