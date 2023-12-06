@@ -161,6 +161,15 @@ const winnerPlayer2 = function (turnTitle, countdown) {
   clearInterval(x);
   playAgainBtn.style.display = "block";
 };
+const Draw = function (turnTitle, countdown) {
+  gameTurnBox.style.backgroundColor = "#fff";
+  gameTurnBox.style.height = "18rem";
+  gameTurnBox.style.bottom = "-18%";
+  turnTitle.textContent = "PLAYERS";
+  countdown.textContent = "DRAW";
+  clearInterval(x);
+  playAgainBtn.style.display = "block";
+};
 const stopGame = function () {
   state.newGame = false;
 };
@@ -498,7 +507,7 @@ boardGame.addEventListener("click", function (e) {
       }
     });
     if (checkD === 42) {
-      clearInterval(x);
+      Draw(turnTitle, countdown);
     }
   }
 });
