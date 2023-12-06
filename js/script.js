@@ -83,15 +83,44 @@ const playerChange = function () {
   }
 };
 const verifyTrue = function (arr) {
-  const arr1 = arr.slice(0, 4);
-  const checkArr1 = arr1.every((e) => e === true);
-  const arr2 = arr.slice(1, 5);
-  const checkArr2 = arr2.every((e) => e === true);
-  const arr3 = arr.slice(2, 6);
-  const checkArr3 = arr3.every((e) => e === true);
-  let finalResult = checkArr1 + checkArr2 + checkArr3;
-  return finalResult;
+  let l = arr.length;
+  if (l === 4) {
+    const arr1 = arr.slice(0, 4);
+    const checkArr1 = arr1.every((e) => e === true);
+    let finalResult = checkArr1;
+    return finalResult;
+  } else if (l === 5) {
+    const arr1 = arr.slice(0, 4);
+    const checkArr1 = arr1.every((e) => e === true);
+    const arr2 = arr.slice(1, 5);
+    const checkArr2 = arr2.every((e) => e === true);
+    let finalResult = checkArr1 || checkArr2;
+    return finalResult;
+  } else if (l === 6) {
+    const arr1 = arr.slice(0, 4);
+    const checkArr1 = arr1.every((e) => e === true);
+    const arr2 = arr.slice(1, 5);
+    const checkArr2 = arr2.every((e) => e === true);
+    const arr3 = arr.slice(2, 6);
+    const checkArr3 = arr3.every((e) => e === true);
+    let finalResult = checkArr1 || checkArr2 || checkArr3;
+    return finalResult;
+  } else if (l === 7) {
+    const arr1 = arr.slice(0, 4);
+    const checkArr1 = arr1.every((e) => e === true);
+    const arr2 = arr.slice(1, 5);
+    const checkArr2 = arr2.every((e) => e === true);
+    const arr3 = arr.slice(2, 6);
+    const checkArr3 = arr3.every((e) => e === true);
+    const arr4 = arr.slice(3, 7);
+    const checkArr4 = arr4.every((e) => e === true);
+    let finalResult = checkArr1 || checkArr2 || checkArr3 || checkArr4;
+    return finalResult;
+  } else {
+    return 0;
+  }
 };
+
 const winnerPlayer1 = function (turnTitle, countdown) {
   bottomColorContainer.style.backgroundColor = "#fd6687";
   gameTurnBox.style.backgroundColor = "#fff";
@@ -204,6 +233,141 @@ boardGame.addEventListener("click", function (e) {
     playerChange(state);
 
     ////////////////////////
+    //   Diagonal1 Win
+    ////////////////////////
+    let finalDiagonalArr1 = [];
+    const circleNum = +state.index;
+    const columnNumtest = +columnNum;
+
+    for (let i = columnNumtest; i > 0; i--) {
+      if (circleNum - (i - columnNumtest) < 7) {
+        let wantedCircleD = document.querySelector(
+          `.game-container-box-middle-board-game-column-${i}-${
+            circleNum - (i - columnNumtest)
+          }`
+        );
+        finalDiagonalArr1.push(wantedCircleD.id);
+      }
+    }
+    ////
+    const winArrPlayer1D = [];
+    finalDiagonalArr1.forEach((ele) => {
+      if (ele.includes("player-1")) {
+        winArrPlayer1D.push(true);
+      } else winArrPlayer1D.push(false);
+    });
+    const winPlayer1D = verifyTrue(winArrPlayer1D);
+
+    const winArrPlayer2D = [];
+    finalDiagonalArr1.forEach((ele) => {
+      if (ele.includes("player-2")) {
+        winArrPlayer2D.push(true);
+      } else winArrPlayer2D.push(false);
+    });
+    const winPlayer2D = verifyTrue(winArrPlayer2D);
+
+    ////////////////////////
+    //   Diagonal2 Win
+    ////////////////////////
+
+    let finalDiagonalArr2 = [];
+
+    finalDiagonalArr2.push(
+      document.querySelector(
+        `.game-container-box-middle-board-game-column-${columnNum}-${state.index}`
+      ).id
+    );
+
+    for (let i = 1; i <= 7 - columnNumtest; i++) {
+      if (circleNum - i > 0) {
+        let wantedCircleD_2 = document.querySelector(
+          `.game-container-box-middle-board-game-column-${columnNumtest + i}-${
+            circleNum - i
+          }`
+        );
+        finalDiagonalArr2.push(wantedCircleD_2.id);
+      }
+    }
+    const winArrPlayer1D_2 = [];
+    finalDiagonalArr2.forEach((ele) => {
+      if (ele.includes("player-1")) {
+        winArrPlayer1D_2.push(true);
+      } else winArrPlayer1D_2.push(false);
+    });
+    const winPlayer1D_2 = verifyTrue(winArrPlayer1D_2);
+
+    const winArrPlayer2D_2 = [];
+    finalDiagonalArr2.forEach((ele) => {
+      if (ele.includes("player-2")) {
+        winArrPlayer2D_2.push(true);
+      } else winArrPlayer2D_2.push(false);
+    });
+    const winPlayer2D_2 = verifyTrue(winArrPlayer2D_2);
+
+    ////////////////////////
+    //   Diagonal3 Win
+    ////////////////////////
+    let finalDiagonalArr3 = [];
+    for (let i = 0; i < columnNumtest; i++) {
+      if (circleNum - i > 0) {
+        let wantedCircleD_3 = document.querySelector(
+          `.game-container-box-middle-board-game-column-${columnNumtest - i}-${
+            circleNum - i
+          }`
+        );
+        finalDiagonalArr3.push(wantedCircleD_3.id);
+      }
+    }
+    const winArrPlayer1D_3 = [];
+    finalDiagonalArr3.forEach((ele) => {
+      if (ele.includes("player-1")) {
+        winArrPlayer1D_3.push(true);
+      } else winArrPlayer1D_3.push(false);
+    });
+    const winPlayer1D_3 = verifyTrue(winArrPlayer1D_3);
+
+    const winArrPlayer2D_3 = [];
+    finalDiagonalArr3.forEach((ele) => {
+      if (ele.includes("player-2")) {
+        winArrPlayer2D_3.push(true);
+      } else winArrPlayer2D_3.push(false);
+    });
+    const winPlayer2D_3 = verifyTrue(winArrPlayer2D_3);
+
+    ////////////////////////
+    //   Diagonal4 Win
+    ////////////////////////
+    let finalDiagonalArr4 = [];
+    for (let i = columnNumtest; i <= 7; i++) {
+      if (
+        circleNum + (i - columnNumtest) > 0 &&
+        circleNum + (i - columnNumtest) < 7
+      ) {
+        let wantedCircleD_4 = document.querySelector(
+          `.game-container-box-middle-board-game-column-${i}-${
+            circleNum + (i - columnNumtest)
+          }`
+        );
+        finalDiagonalArr4.push(wantedCircleD_4.id);
+      }
+    }
+    const winArrPlayer1D_4 = [];
+    finalDiagonalArr4.forEach((ele) => {
+      if (ele.includes("player-1")) {
+        winArrPlayer1D_4.push(true);
+      } else winArrPlayer1D_4.push(false);
+    });
+    const winPlayer1D_4 = verifyTrue(winArrPlayer1D_4);
+
+    const winArrPlayer2D_4 = [];
+    finalDiagonalArr4.forEach((ele) => {
+      if (ele.includes("player-2")) {
+        winArrPlayer2D_4.push(true);
+      } else winArrPlayer2D_4.push(false);
+    });
+    const winPlayer2D_4 = verifyTrue(winArrPlayer2D_4);
+
+    ////////////////////////
     //   Horizontal Win
     ////////////////////////
     let finalArrowArr = [];
@@ -219,6 +383,7 @@ boardGame.addEventListener("click", function (e) {
       } else winArrPlayer1H.push(false);
     });
     const winPlayer1H = verifyTrue(winArrPlayer1H);
+
     const winArrPlayer2H = [];
     finalArrowArr.forEach((ele) => {
       if (ele.includes("player-2")) {
@@ -255,19 +420,51 @@ boardGame.addEventListener("click", function (e) {
     //   WIN
     ////////////////////////
 
-    if (winPlayer1 === 1) {
+    if (winPlayer1 === true) {
       winnerPlayer1(turnTitle, countdown);
       stopGame();
     }
-    if (winPlayer2 === 1) {
+    if (winPlayer2 === true) {
       winnerPlayer2(turnTitle, countdown);
       stopGame();
     }
-    if (winPlayer1H === 1) {
+    if (winPlayer1H === true) {
       winnerPlayer1(turnTitle, countdown);
       stopGame();
     }
-    if (winPlayer2H === 1) {
+    if (winPlayer2H === true) {
+      winnerPlayer2(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer1D === true) {
+      winnerPlayer1(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer2D === true) {
+      winnerPlayer2(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer1D_2 === true) {
+      winnerPlayer1(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer2D_2 === true) {
+      winnerPlayer2(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer1D_3 === true) {
+      winnerPlayer1(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer2D_3 === true) {
+      winnerPlayer2(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer1D_4 === true) {
+      winnerPlayer1(turnTitle, countdown);
+      stopGame();
+    }
+    if (winPlayer2D_4 === true) {
       winnerPlayer2(turnTitle, countdown);
       stopGame();
     }

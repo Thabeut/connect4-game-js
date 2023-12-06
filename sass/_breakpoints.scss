@@ -7,14 +7,14 @@ $breakpoints: (
   // "xsph-3": 28em,
   // "xsph-2": 32em,
   // "xsph": 36em,
-  "smph": 56em,
-  "mdph": 60em,
-  "lgph": 64em,
-  //tab = Tablet
-  "xstab": 68em,
-  "smtab": 72em,
-  "mdtab": 76em,
-  "lgtab": 80em,
+  // "smph": 56em,
+  // "mdph": 60em,
+  // "lgph": 64em,
+  // //tab = Tablet
+  // "xstab": 68em,
+  // "smtab": 72em,
+  // "mdtab": 76em,
+  // "lgtab": 80em,
   //desktop
   "xs": 84em,
   "sm": 88em,
@@ -57,47 +57,47 @@ $breakpoints: (
 //     @content;
 //   }
 // }
-@mixin smph {
-  @media (max-width: map-get($breakpoints, "smph")) {
-    @content;
-  }
-}
+// @mixin smph {
+//   @media (max-width: map-get($breakpoints, "smph")) {
+//     @content;
+//   }
+// }
 
-@mixin mdph {
-  @media (max-width: map-get($breakpoints, "mdph")) {
-    @content;
-  }
-}
+// @mixin mdph {
+//   @media (max-width: map-get($breakpoints, "mdph")) {
+//     @content;
+//   }
+// }
 
-@mixin lgph {
-  @media (max-width: map-get($breakpoints, "lgph")) {
-    @content;
-  }
-}
+// @mixin lgph {
+//   @media (max-width: map-get($breakpoints, "lgph")) {
+//     @content;
+//   }
+// }
 
-@mixin xstab {
-  @media (max-width: map-get($breakpoints, "xstab")) {
-    @content;
-  }
-}
+// @mixin xstab {
+//   @media (max-width: map-get($breakpoints, "xstab")) {
+//     @content;
+//   }
+// }
 
-@mixin smtab {
-  @media (max-width: map-get($breakpoints, "smtab")) {
-    @content;
-  }
-}
+// @mixin smtab {
+//   @media (max-width: map-get($breakpoints, "smtab")) {
+//     @content;
+//   }
+// }
 
-@mixin mdtab {
-  @media (max-width: map-get($breakpoints, "mdtab")) {
-    @content;
-  }
-}
+// @mixin mdtab {
+//   @media (max-width: map-get($breakpoints, "mdtab")) {
+//     @content;
+//   }
+// }
 
-@mixin lgtab {
-  @media (max-width: map-get($breakpoints, "lgtab")) {
-    @content;
-  }
-}
+// @mixin lgtab {
+//   @media (max-width: map-get($breakpoints, "lgtab")) {
+//     @content;
+//   }
+// }
 
 @mixin xs {
   @media (max-width: map-get($breakpoints, "xs")) {
@@ -132,13 +132,13 @@ $breakpoints: (
 //html
 html {
   @include xl {
-    font-size: 53%;
+    font-size: 60%;
   }
   @include lg {
-    font-size: 50%;
+    font-size: 56%;
   }
   @include md {
-    font-size: 48%;
+    font-size: 52%;
   }
   @include sm {
     font-size: 46%;
@@ -146,27 +146,27 @@ html {
   @include xs {
     font-size: 42%;
   }
-  @include lgtab {
-    font-size: 40%;
-  }
-  @include mdtab {
-    font-size: 38%;
-  }
-  @include smtab {
-    font-size: 36%;
-  }
-  @include xstab {
-    font-size: 34%;
-  }
-  @include lgph {
-    font-size: 32%;
-  }
-  @include mdph {
-    font-size: 30%;
-  }
-  @include smph {
-    font-size: 28%;
-  }
+  // @include lgtab {
+  //   font-size: 40%;
+  // }
+  // @include mdtab {
+  //   font-size: 38%;
+  // }
+  // @include smtab {
+  //   font-size: 36%;
+  // }
+  // @include xstab {
+  //   font-size: 34%;
+  // }
+  // @include lgph {
+  //   font-size: 32%;
+  // }
+  // @include mdph {
+  //   font-size: 30%;
+  // }
+  // @include smph {
+  //   font-size: 28%;
+  // }
   // @include xsph {
   //   font-size: 18%;
   // }

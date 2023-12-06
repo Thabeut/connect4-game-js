@@ -40,14 +40,14 @@
     align-items: center;
     width: 120rem;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
     .game-container-box-top {
       display: flex;
       align-items: center;
-      gap: 20rem;
+      gap: 18rem;
       .game-container-box-top-btn {
         background-color: #5c2dd5;
         color: #fff;
@@ -62,7 +62,7 @@
       }
     }
     .game-container-box-middle {
-      margin-top: 4rem;
+      margin-top: 6rem;
 
       .game-container-box-middle-board {
         display: flex;
