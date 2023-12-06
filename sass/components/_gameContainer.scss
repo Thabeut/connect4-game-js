@@ -7,12 +7,26 @@
   border-radius: 3rem;
   border: 0.3rem solid #333;
   border-bottom: 1.6rem solid #333;
+  @include xs {
+    width: 36rem;
+    height: 16rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 @mixin icon {
   position: absolute;
   top: -16%;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 6rem;
+  @include xs {
+    width: 8rem;
+    top: 26%;
+    left: -2%;
+  }
 }
 @mixin title {
   margin-top: 1rem;
@@ -21,11 +35,18 @@
   font-weight: 600;
   text-transform: uppercase;
   width: 10rem;
+  @include xsph-2 {
+    font-size: 3.2rem;
+    width: 50rem;
+  }
 }
 @mixin score {
   font-size: 6.4rem;
   text-align: center;
   font-weight: 700;
+  @include xsph-2 {
+    font-size: 8rem;
+  }
 }
 
 .game-container {
@@ -44,10 +65,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
+    @include xs {
+      top: 28%;
+    }
     .game-container-box-top {
       display: flex;
       align-items: center;
       gap: 18rem;
+      @include xs {
+        gap: 22rem;
+        margin-left: 8rem;
+      }
+      .game-container-box-top-icon {
+        width: 6rem;
+        @include xsph-2 {
+          width: 8rem;
+        }
+      }
       .game-container-box-top-btn {
         background-color: #5c2dd5;
         color: #fff;
@@ -56,6 +90,13 @@
         border: none;
         border-radius: 10rem;
         cursor: pointer;
+        @include xs {
+          font-size: 2rem;
+        }
+        @include xsph-2 {
+          font-size: 3.2rem;
+          padding: 2rem 4rem;
+        }
         &:hover {
           background-color: #f36687;
         }
@@ -63,14 +104,30 @@
     }
     .game-container-box-middle {
       margin-top: 6rem;
-
+      @include xs {
+        margin-top: 1rem;
+      }
       .game-container-box-middle-board {
         display: flex;
         align-items: center;
         gap: 6rem;
+        @include xs {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          width: 100rem;
+          height: 50rem;
+          gap: 0;
+        }
 
         .game-container-box-middle-board-player-1 {
           @include player;
+          @include xs {
+            left: 18%;
+          }
+          @include xsph-2 {
+            left: 8%;
+          }
           .game-container-box-middle-board-player-1-icon {
             @include icon;
           }
@@ -93,6 +150,17 @@
           border-radius: 4rem;
           display: flex;
           justify-content: space-between;
+          @include xs {
+            grid-row: 2/3;
+            margin-left: 14rem;
+            width: 80rem;
+            height: 78rem;
+          }
+          @include xsph-2 {
+            margin-left: 4rem;
+            width: 100rem;
+            height: 98rem;
+          }
           cursor: pointer;
           .game-container-box-middle-board-game-column {
             position: relative;
@@ -103,6 +171,9 @@
               top: -11%;
               left: 20%;
               display: none;
+              @include xs {
+                display: none !important;
+              }
             }
             height: 98%;
             display: flex;
@@ -115,6 +186,14 @@
               background-color: #7945ff;
               border: 0.3rem solid #333;
               border-top: 1.4rem solid #333;
+              @include xs {
+                width: 9rem;
+                height: 9rem;
+              }
+              @include xsph-2 {
+                width: 11rem;
+                height: 11rem;
+              }
             }
             .game-container-box-middle-board-game-column-circle-player-1 {
               background-color: #fd6687;
@@ -128,8 +207,16 @@
         }
         .game-container-box-middle-board-player-2 {
           @include player;
+          @include xs {
+            left: -110%;
+            flex-direction: row-reverse;
+          }
+
           .game-container-box-middle-board-player-2-icon {
             @include icon;
+            @include xs {
+              left: 100%;
+            }
           }
           .game-container-box-middle-board-player-2-title {
             @include title;
@@ -151,12 +238,27 @@
       border-top-right-radius: 6rem;
       border-top-left-radius: 6rem;
       background-color: #f36687;
+      @include xs {
+        bottom: -90% !important;
+        left: 44% !important;
+        width: 22rem;
+      }
+      @include xsph-2 {
+        bottom: -128% !important;
+        left: 42% !important;
+        width: 26rem;
+        height: 18rem;
+      }
+
       .game-container-box-bottom-player-turn {
         margin-top: 2.4rem;
         color: #fff;
         font-size: 1.4rem;
         font-weight: 600;
         text-align: center;
+        @include xsph-2 {
+          font-size: 2.4rem;
+        }
       }
       .game-container-box-bottom-countdown {
         margin-top: 1rem;
@@ -164,6 +266,9 @@
         font-size: 5rem;
         text-align: center;
         font-weight: 600;
+        @include xsph-2 {
+          font-size: 6rem;
+        }
       }
       .game-container-box-bottom-play-again {
         margin-left: 2.8rem;
@@ -175,6 +280,9 @@
         border-radius: 10rem;
         cursor: pointer;
         display: none;
+        @include xsph-2 {
+          font-size: 2.4rem;
+        }
         &:hover {
           background-color: #f36687;
         }
