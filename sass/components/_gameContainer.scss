@@ -189,9 +189,11 @@
               // animation: MoveUpDown 2s linear;
 
               @keyframes MoveUpDown {
-                0%,
+                0% {
+                  transform: translateY(-100vh);
+                }
                 50% {
-                  transform: translateY(-100rem);
+                  transform: translateY(2rem);
                 }
               }
 

@@ -173,11 +173,11 @@ const Draw = function (turnTitle, countdown) {
 const stopGame = function () {
   state.newGame = false;
 };
-const getCountdown = function (seconds = 31) {
+const getCountdown = function (seconds = 30) {
   if (x) {
     clearInterval(x);
   }
-
+  countdownBox.textContent = seconds + "s ";
   x = setInterval(function () {
     seconds = seconds - 1;
     countdownBox.textContent = seconds + "s ";
@@ -242,7 +242,7 @@ boardGame.addEventListener("click", function (e) {
     //
     let wantedCircle = document.getElementById(`circle-${columnNum}-${i}`);
     wantedCircle.style.borderTop = "0.6rem solid #333";
-    wantedCircle.style.animation = "MoveUpDown 0.1s linear";
+    wantedCircle.style.animation = `MoveUpDown 0.15s linear`;
 
     if (state.player === "1") {
       wantedCircle.style.backgroundColor = "#fd6687";
@@ -272,7 +272,19 @@ boardGame.addEventListener("click", function (e) {
         finalDiagonalArr1.push(wantedCircleD.id);
       }
     }
-    ////
+
+    for (let i = 1; i <= 7 - columnNumtest; i++) {
+      if (circleNum - i > 0) {
+        let wantedCircleD_2 = document.querySelector(
+          `.game-container-box-middle-board-game-column-${columnNumtest + i}-${
+            circleNum - i
+          }`
+        );
+        finalDiagonalArr1.push(wantedCircleD_2.id);
+      }
+    }
+    finalDiagonalArr1.sort();
+
     const winArrPlayer1D = [];
     finalDiagonalArr1.forEach((ele) => {
       if (ele.includes("player-1")) {
@@ -292,45 +304,7 @@ boardGame.addEventListener("click", function (e) {
     ////////////////////////
     //   Diagonal2 Win
     ////////////////////////
-
     let finalDiagonalArr2 = [];
-
-    finalDiagonalArr2.push(
-      document.querySelector(
-        `.game-container-box-middle-board-game-column-${columnNum}-${state.index}`
-      ).id
-    );
-
-    for (let i = 1; i <= 7 - columnNumtest; i++) {
-      if (circleNum - i > 0) {
-        let wantedCircleD_2 = document.querySelector(
-          `.game-container-box-middle-board-game-column-${columnNumtest + i}-${
-            circleNum - i
-          }`
-        );
-        finalDiagonalArr2.push(wantedCircleD_2.id);
-      }
-    }
-    const winArrPlayer1D_2 = [];
-    finalDiagonalArr2.forEach((ele) => {
-      if (ele.includes("player-1")) {
-        winArrPlayer1D_2.push(true);
-      } else winArrPlayer1D_2.push(false);
-    });
-    const winPlayer1D_2 = verifyTrue(winArrPlayer1D_2);
-
-    const winArrPlayer2D_2 = [];
-    finalDiagonalArr2.forEach((ele) => {
-      if (ele.includes("player-2")) {
-        winArrPlayer2D_2.push(true);
-      } else winArrPlayer2D_2.push(false);
-    });
-    const winPlayer2D_2 = verifyTrue(winArrPlayer2D_2);
-
-    ////////////////////////
-    //   Diagonal3 Win
-    ////////////////////////
-    let finalDiagonalArr3 = [];
     for (let i = 0; i < columnNumtest; i++) {
       if (circleNum - i > 0) {
         let wantedCircleD_3 = document.querySelector(
@@ -338,29 +312,10 @@ boardGame.addEventListener("click", function (e) {
             circleNum - i
           }`
         );
-        finalDiagonalArr3.push(wantedCircleD_3.id);
+        finalDiagonalArr2.push(wantedCircleD_3.id);
       }
     }
-    const winArrPlayer1D_3 = [];
-    finalDiagonalArr3.forEach((ele) => {
-      if (ele.includes("player-1")) {
-        winArrPlayer1D_3.push(true);
-      } else winArrPlayer1D_3.push(false);
-    });
-    const winPlayer1D_3 = verifyTrue(winArrPlayer1D_3);
 
-    const winArrPlayer2D_3 = [];
-    finalDiagonalArr3.forEach((ele) => {
-      if (ele.includes("player-2")) {
-        winArrPlayer2D_3.push(true);
-      } else winArrPlayer2D_3.push(false);
-    });
-    const winPlayer2D_3 = verifyTrue(winArrPlayer2D_3);
-
-    ////////////////////////
-    //   Diagonal4 Win
-    ////////////////////////
-    let finalDiagonalArr4 = [];
     for (let i = columnNumtest; i <= 7; i++) {
       if (
         circleNum + (i - columnNumtest) > 0 &&
@@ -371,25 +326,28 @@ boardGame.addEventListener("click", function (e) {
             circleNum + (i - columnNumtest)
           }`
         );
-        finalDiagonalArr4.push(wantedCircleD_4.id);
+        finalDiagonalArr2.push(wantedCircleD_4.id);
       }
     }
-    const winArrPlayer1D_4 = [];
-    finalDiagonalArr4.forEach((ele) => {
+    let diagonalSet2 = new Set(finalDiagonalArr2);
+    let lastDiagonalArr2 = [...diagonalSet2];
+    lastDiagonalArr2.sort();
+    const winArrPlayer1D_2 = [];
+    lastDiagonalArr2.forEach((ele) => {
       if (ele.includes("player-1")) {
-        winArrPlayer1D_4.push(true);
-      } else winArrPlayer1D_4.push(false);
+        winArrPlayer1D_2.push(true);
+      } else winArrPlayer1D_2.push(false);
     });
-    const winPlayer1D_4 = verifyTrue(winArrPlayer1D_4);
+    const winPlayer1D_2 = verifyTrue(winArrPlayer1D_2);
 
-    const winArrPlayer2D_4 = [];
-    finalDiagonalArr4.forEach((ele) => {
+    const winArrPlayer2D_2 = [];
+    lastDiagonalArr2.forEach((ele) => {
       if (ele.includes("player-2")) {
-        winArrPlayer2D_4.push(true);
-      } else winArrPlayer2D_4.push(false);
+        winArrPlayer2D_2.push(true);
+      } else winArrPlayer2D_2.push(false);
     });
-    const winPlayer2D_4 = verifyTrue(winArrPlayer2D_4);
-
+    const winPlayer2D_2 = verifyTrue(winArrPlayer2D_2);
+    //
     ////////////////////////
     //   Horizontal Win
     ////////////////////////
@@ -475,23 +433,6 @@ boardGame.addEventListener("click", function (e) {
       winnerPlayer2(turnTitle, countdown);
       stopGame();
     }
-    if (winPlayer1D_3 === true) {
-      winnerPlayer1(turnTitle, countdown);
-      stopGame();
-    }
-    if (winPlayer2D_3 === true) {
-      winnerPlayer2(turnTitle, countdown);
-      stopGame();
-    }
-    if (winPlayer1D_4 === true) {
-      winnerPlayer1(turnTitle, countdown);
-      stopGame();
-    }
-    if (winPlayer2D_4 === true) {
-      winnerPlayer2(turnTitle, countdown);
-      stopGame();
-    }
-
     // DRAW
 
     let drawCheck = [];
